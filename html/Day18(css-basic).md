@@ -80,19 +80,27 @@ input[type=”text”] {
 - 대부분의 디자인 css는 많아야 20개 ~ 5개 그리고 그것에 대해서 예제 가이드라인을 준다. 그리고 이제 개발자가 스타일시트를 받아서 사용하다가 특정 이슈가 생기면 그 때 인터널 스타일이나 인라인 스타일을 사용한다. 혹은 디자이너에게 물어본다.
 - 디자이너가 jpg파일로 보내주면, 그걸 다시 포토샵을 켜서 각 색상을 코드화시키고 각각의 로고들은 따로 jpg 분할하여 저장하여 사용한다.
 - 이미지위에 글씨를 새겨넣어야 하는 경우는 image를 삽입하는게 아니라, bg-image로 넣는다. 그리고 그 위에 글을 적는다.
+- 실무에서는 px단위보다 비율 단위인 em단위를 사용한다.
 
-
+**css tag선택자 사용 방법**
 - 대부분의 css 내에서 80~90%는 class선택자, 1,2%는 id선택자, 그리고 나머지를 tag 선택자로 사용한다.
 - a tag에서 text-decoraton:none;으로 해서 전부 적용하는 경우가 많다.
 - body tag에 패딩을 줘서, 용지여백을 기본설정하고 이후 작업한다. 
 - 폰트도 마찬가지로 기본설정을 하고 이후 작업한다.
 - id tag는 디자이너보단 오히려 개발자들이 주로 사용한다. 한 곳에만 뭔 효과를 주고 싶을 때
 
-css 색의 표현 종류
+**css 색의 표현 종류**
 - hex / rgb /hsl(자주 사용x)
 - 색 표현 시 white나 black처럼 명확한 것은 그냥 사용하기도 하는데 이게 속도가 더 빠를 수도 있음..(확실한건 아니라고 하심, 대신 개발자에게 좀 더 배려있는 표현일 수 있음)
 
 css 상에 url 지정에 상대경로가 아닌 인터넷상의 절대경로도 사용가능하다.
+
+css style tips
+- css width와 height를 줄 때는 둘 다 주는 것이 아니라, width나 height 중 하나를 기준으로 주고 나머지 부분을 auto로 줘서 원하는 레이아웃에 맞춘다.
+- initial은 대상 요소의 기본값이 적용한다.
+- inherit은 부모 요소의 속성값을 적용 받아온다.
+- 한 <code>div</code>안에 여러 개의 컨텐츠가 들어가는 경우라면, 각 컨텐츠별로 margin을 주는 것보다 차라리 레이아웃인 div에 padding을 주는 것이 좋다.
+
 ```html
 body {
     background-image: url("/images/gradient_bg.png");
@@ -103,6 +111,30 @@ p.mix {
     border-style: dotted dashed solid double;
 }
 ```
+
+**css box model**
+- border : 바깥 여백
+- padding : 안 여백
+- outline-style : border 밖을 둘러 싼 line
+
+**css 추가 기능**
+text-align:justify; 컨텐츠 크기 맞춰서 텍스트 정렬
+
+text-shadow : 2px 2px red; (x축 이동, y축 이동, 색상)
+
+font-family: "첫번째 글씨체", "두번째 글씨체", "세번째 글씨체" 로 지정할 수 있다. (단, 마지막 글씨체는 기본 폰트 패밀리로 구성해야 한다)
+
+해상도가 다른 기기에 대해 비율로 조정하는 것이 좋기 때문에.
+16px = 1em인 em 단위로 바꾸어 설정한다.
+
+display는 none하면 공간 자체가 사라진다.
+visibility는 hidden을 해도 공간은 남아있는다.
+
+46html 해보면 좋음
+
+한 stylecss을 하나 가져와서 media screen으로 max-width마다 각기 지정을 하게 한다.
+
+
 *개인 공부시 참고할 것*
 <a href="https://thrillfighter.tistory.com/487" target="_blank">CSS 우선순위 규칙 Cascading</a>
 https://developer.mozilla.org/ko/docs/Web/HTML/Element/link
