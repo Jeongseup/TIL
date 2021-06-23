@@ -87,6 +87,42 @@ ___
 - ECMA Script(ES)가 표준 스크립트를 정해둠.
 - 버젼명을 붙이면 ES5, ES6가 됨.
 
+**자바스크립트 작성방법**
+- head나 body tag 안에 작성할 수 있다.
+- 외부 .js 파일에 작성하고 import할 수 있다.
+- 스크립트 바디 태그 내에 제일 밑에 넣는다. (클라이언트 입장에서 컨텐츠 보다, 일단 레이아웃부터 나오는 것이 편하다 응답받는 느낌, 화면속도에 많은 영향을 끼치기 때문)
+- js는 개발 내내 콘솔창을 사용해야 한다.
+- 꿀팁
+.log = 함수이다.
+```js
+console.log("콘솔창에 출력합니다")
+```
+
+**콘솔창 용도**
+- js의 문법 오류시 디버그 역할
+- 연산과 같은 프로그래밍이 필요할 때 사용(console.log로 부분적인 함수를 테스트할 때 사용)
+
+**자바스크립의 변수명 선언 규칙**
+- 중간에 공백이 있을 수 없다.
+- 중간에 특수문자가 있을 수 없다(단, $ 과 _ 는 가능)
+- 변수명의 시작은 숫자가 올 수 없다.
+
+```js
+        var myAge; //카멜케이스, camelCase 
+        var my_age; //스네이크케이스, snake_case
+        var MyAge; //파스칼케이스, PascalCase
+        var intMyAge;
+        var strUserName; //헝가리언케이스, hungarian case 
+```
+- 요즘 추세는 카멜케이스로가고 있음 ES6가 그렇게 이루어져 있어서
+
+
+var x = 5;라고 선언하면, x와  5는 내부 메모리에 저장된다.
+그리고 js는 재선언이 가능한데 x=9;와 var x =9; 이렇게 둘 다 가능하다.
+후자 같은 경우는 메모리 상에 또 다른 x블록이 생기는 개념이다.
+그래서 let이라는 개념이 있음 상위에 적힌 변수 할당을 중복 안되게 함
+const는 상수의 개념 절대변수의 느낌
+
 ___
 #### *번외 - 개인 공부시 참고할 것*
 
@@ -98,3 +134,7 @@ https://ko.wikipedia.org/wiki/%EC%82%AC%EC%9D%B4%ED%8A%B8_%EC%9D%B4%EB%8F%99_%EA
 
 **CSS 애니메이션**
 배워보면 좋을 것 같은 부분
+
+https://ko.wikipedia.org/wiki/ECMA%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8
+
+https://github.com/parksb/javascript-style-guide/blob/master/README.md
