@@ -123,6 +123,121 @@ var x = 5;라고 선언하면, x와  5는 내부 메모리에 저장된다.
 그래서 let이라는 개념이 있음 상위에 적힌 변수 할당을 중복 안되게 함
 const는 상수의 개념 절대변수의 느낌
 
+**undefined 와 null**
+- undefined는 시스템이 임의적으로 할당한 변수이지만, null은 의도적으로 넣어주는 공백 변수이다.
+- 기본 데이터 유형과 object 유형으로 구분된다.
+- 기본 데이터 유형 종류로는 string / integer / boolean / undefined / null / symbol 등이 있다.
+```js
+        // undefined
+        let car;
+        console.log(car);
+        console.log("is car undefined ?\n", car == undefined); // true
+
+        // null
+        let car2 = null;
+        console.log(car2); // null
+```
+- object유형은 복잡한데, 
+```
+        let person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 40,
+            tel: "123456",
+            email: "abc@email.com"
+        };
+```
+
+이 두개의 차이는 뭘까?
+       console.log(person.email);
+        console.log(person["email"]);
+
+let keyValue= "email"
+
+console.log(person.keyValue); -> 에러
+console.log(person[keyValue]); -> 작동 
+어떤 속성을 클라이언트가 선택할지 몰라서 해당 속성을 하나의 변수로 지정 해둘 때(keyValue) 해당 속성에 대한 값은 keyValue 자체가 값이 아니라, 해당 변수에 담긴 keyValue의 value가 속성이므로 object[keyValue]로만 선택 가능하다.
+
+그래서 대부분의 프로그래밍 방식에서는 person[keyvalue]로 선택을 한다.
+
+배열과 오브젝트를 가장 많이 쓴다.
+그리고 배열에 담기는 하나하나의 정보는 오브젝트 데이터이다.
+즉, [person1, person2, ... person100]의 형태
+
+python처럼 -1로 하면 인덱싱이 안되네..
+        console.log(cars[-1]);
+
+
+arr이나 object나 결국 js는 다 원래 오브젝트를 상속받아 생긴 개념이므로,
+typeof 를 arr과 object를 해도 다 object이다.
+
+      
+**신기한 js의 상의 에러..?**
+  let x = 0.2 + 0.1;
+        console.log(x); // 0.30000000000000004 라고 함.
+       
+js는 64bit 부동소수점으로 저장함. 64비트 공간에 저장하는데, 유한소수? 무한 소수의 개념 때문에 저 64비트 공간안에 안 담겨서 중간에 짜르다보니까 끝에 0.0000000000000004라고 나타난다
+
+let y = 9999999999999999;
+console.log(Number.MAX_SAFE_INTEGER); //9007199254740991
+console.log(y); //10000000000000000
+
+
+
+
+아직도 햇갈리는.. 부분
+x += y;
+console.log(x);
+언제 쓰냐? 최종 합계를 구하는 코드에 있어서 
+```js
+sum = sum + x1;
+sum = sum + x2;
+..
+보다
+
+sum += x1;
+sum += x2;
+로 사용한다.
+```
+아까 
+console.log(0.2 + 0.1);이 오류나는 걸 아래처럼 우회해서 쓰기도 한다.
+console.log(3 / 10); 이 경우에는 3과 10의 메모리 할당 충돌 없어서 잘됨!
+
+
+```js
+    <script>
+        var x = 1;
+
+        // x += 1;
+        // x = x + 1;
+
+        x++; // 아직까지는 1, 이 아래서부터 2
+
+        console.log(x); // 2
+        console.log(x++); // 2
+        console.log(x); // 3
+
+        console.log(++x); // 앞에서 더하면 더하고 실행 
+    </script>
+```
+
+
+        //논리 연산자 : and조건, or조건
+        var x1 = true && true; // AND - &&
+        var x2 = true || false; // OR - ||
+
+** 조건 삼항 연산자..?**
+var age = 28;
+var isAdult = (age >= 19) ? true : false;
+
+이렇게 쓸 수도 있다.
+        var time = 12;
+        var greeting = (time < 10) ? "Good morning!" : (time < 16) ? "Good afternoon" : (time <= 20) ? "Good evening" :
+            "Good night!";
+
+
+ctrl + B 패널 
+
 ___
 #### *번외 - 개인 공부시 참고할 것*
 
@@ -136,5 +251,7 @@ https://ko.wikipedia.org/wiki/%EC%82%AC%EC%9D%B4%ED%8A%B8_%EC%9D%B4%EB%8F%99_%EA
 배워보면 좋을 것 같은 부분
 
 https://ko.wikipedia.org/wiki/ECMA%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8
-
+https://velog.io/@sgyoon/2019-09-15-01
 https://github.com/parksb/javascript-style-guide/blob/master/README.md
+
+https://ko.wikipedia.org/wiki/%EC%A1%B4_%EB%8F%84
