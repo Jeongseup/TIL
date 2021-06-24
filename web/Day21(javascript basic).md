@@ -2,7 +2,7 @@
 
 ### Day21, 5주차 - bootscript, javascript
 
-#### Day 20 Review
+#### Day 20 Review part
 
 **자바스크립트 내 null의 역할**
 - 변수에 특정 값을 할당한 이후 null을 할당하면 해당 메모리 공간을 다시 확보할 수 있다.
@@ -32,6 +32,8 @@
 result : 0.30000000000000004
 ```
 
+#### 한줄평
+프로그래밍 언어도 결국 하나의 언어이다. 외국어를 배우다보면 해당 국가에 대한 문호적 특성이 정말 잘 드러나듯 하나의 프로그래밍 언어의 탄생과정과 해당 언어가 적용되는 것을 보다보면 문화적 및 시기적 배경이 잘 베여있는 것을 알 수 있다.
 ___
 
 **자바스크립트 문법1 - 부등식 연산자**
@@ -46,6 +48,29 @@ ___
     var day = d.getDay(); 
 >>> 오늘의 요일을 0 ~ 6까지로 가지고 옴(일, 월, 화...)
 ```
+- 오브젝트 선언 이후 새로운 키 값 할당 방법
+```javascript
+    var person = {};
+    var person = new Object();
+
+    person.fistName = .. 
+    person.lastName = ..
+
+```
+- 오브젝트 내 this 활용 방법 : 오브젝트 안에서 다시 오브젝트 내 변수에 접근할 때는 `this` 녀석이 필요하다.
+```javascript
+
+    var person = {
+        firstName = "John",
+        lastName = "Doe",
+        getFullName = function {
+            return this.firstName + " " + this.lastName;
+        }
+    };
+
+```
+- array object 내에서 특정 값을 찾고자 `indexOf` 기능을 사용할 때, 해당 단어가 index안에 없으면 -1 값을 return한다.(그럼 그 -1 값을 가지고 true or false에 대한 조건문을 만들 수 있다 `if( 조건 < -1)`)
+
 
 **자바스크립트 문법3 - 반복문**
 - 같은 for문이라도 반복을 돌리는 방식은 여러가지이다.
@@ -111,12 +136,39 @@ ___
 - 자바스크립트는 기본적으로 함수 코드를 먼저 해석한다. 그래서 밑에 다 넣어두더라도 에러가 나지 않는다. 하지만, 함수를 변수형태로 저장해두면 에러가 밑에 둘 경우 에러가 발생한다.(함수이지만, 변수 취급으로 선언해서 먼저 해석하지 않는 다는 것을 알 수 있음)
 - 그렇다면, 함수 표현을 왜 굳이 변수처럼 할 수 있도록 만들어 둔 것일까? -> 확실치는 않으나, 메모리 구조적 차이가 있을 수 있다.(생각해보면, 모든 함수를 다 해석하고 프로그램을 실행시키는 것은 비효율적일 수 있음)
 
-
-사용자가 뭘 누를 지 모를 때는 
-calculator 함수를 바로 만드는 것 보다는 calculator 내에 따로 add함수를 만들어 둔다면,
-사용자 및 개발자가 바로 내부에 
+- 사용자가 뭘 누를 지 모를 때는 `calculator` 함수와 같은 프로그램을 바로 만드는 것 보다는 `calculator` 프로그램 내 기능 하나하나를 따로 `add`함수와 같이 만들어 두는 것이 사용자 및 개발자가 필요 해당 기능에 바로 접근할 수 있다는 이점이 있다.
 
 
+**자바스크립트 문법6 - string slicing**
+```javascript
+    
+    // slice function : 두개의 파라미터를 받는다.
+    // parameter.1 : 시작 인덱스 번호
+    // parameter.2 : 종료인덱스 번호
+
+    var text = "Apple, Banana, Kiwi";
+    let slicedText = text.slice(7, 13)
+
+    그리고, 다음과 같은 형식으로도 가능하다.
+    // 기본 케이스
+    text.slice(7, 13);
+    // 시작 인덱스부터 끝까지
+    text.slice(7);
+    // -12는 해당 문자열을 뒤에서 부터 센 뒤, 슬라이싱
+    text.slice(-12);
+
+
+    slice이외에 substring과 substr이란 기능이 있기도 하다.
+    본인에게 좀 더 편한 함수를 사용하자.
+```
+- replace 함수 : 나중에 정규표현식(regular expression)을 좀 더 익힌 뒤에 제대로 활용할 수 있을 듯 싶다.(정규표현식은 다 외우고 한다기보다 필요할 때 활용할 수 있으면 되는 정도임)
+```javascript
+    var date = "2021.06.24";
+
+    console.log(date); // 2021.06.24
+    console.log(date.replace(".", "-")); // 2021-06.24
+    console.log(date.replace(/\./g, "-")); // 2021-06-24
+```
 
 **자바스크립트 문법들의 활용 사례**
 - 조건 삼항 연산자(`?`)와 조건문의 차이(`if`)는 조건 삼항 연산자는 코드를 실행한다기보다 변수에 값을 할당하기 위해 사용하고, 조건문은 내부에서 코드(함수)를 실행하기 위해 사용하는 형식이다.
@@ -208,9 +260,11 @@ calculator 함수를 바로 만드는 것 보다는 calculator 내에 따로 add
     return eval(n1 + operator + n2);
 }
 ```
+- `uppercase`와 `lowercase`함수들의 활용방법 : 언제 uppercase나 lowercase를 사용하는가?에 대한 대답은 서버 프로그램끼리의 규약으로 사용자가 검색 조회를 할 경우 소문자로 검색할지 대문자로 검색하게 할지를 정하는 용도로 활용한다.(예를 들어, 여권과 같이 대문자로만 printing해야할 때 사용함)
 
 
-**자바스크립트 문법 내 신기한 점들**
+
+**자바스크립트 문법 내 신기한 점**
 ```javascript
 기존 조건 삼항 연산자를 if문으로 바꾼 사례
 
@@ -232,7 +286,8 @@ console.log("Hi,", greeting);
 (console log상에서 쉼표는 spacebar를 하나 넣어줌!)
 ```
 
-
+#### 한줄평
+무언가를 배울 때는 기능적인 것보다 용도적인 측면을 고려해야 잘 기억된다고 강사님께서 말씀하셨다. 이번에 배운 자바스크립의 함수는 상당히 외워야할 요소들이 많았다. 그리고 일반적인 개발자들 사이에서도 발전된 기능이 있지만 못 따라가는 요소들도 존재하는 것을 느꼈다. 하나의 언어는 특히 프로그래밍 언어는 생존 법칙(필요성)에 크게 의존하면서 발전한다. 주기적으로 언어 main docs를 살피는 것이 상당히 큰 도움이 되겠다는 생각이 들었다.
 
 ___
 #### *번외 - 추가로 공부해볼만한 것들*
@@ -245,49 +300,3 @@ ___
 3. 
 다양한 함수 사용방법
 019.html  파일 공부
-
-
-- 오브젝트 내 this 구문
-```javascript
-    var person = {};
-    var person = new Object();
-
-    person.fistName = .. 
-    person.lastName = ..
-
-```
-오브젝트 안에서 다시 오브젝트로 접근할 때는 this나는 녀석이필요함
-
-무언가를 배울 때는 기능적인 것보다 용도적인 측면을 고려해야 잘 기억된다.
-
-해당 단어가 index안에 없으면 -1 값을 return한다.
-
-
-        //  slice - 두개의 파라미터를 받는다.
-        //  1. 시작 인덱스 번호 / 2. 종료인덱스 번호
-        var text = "Apple, Banana, Kiwi";
-
-        var findWord = "Banana";
-        text.
-        let slicedText = text.slice(7, 13)
-
-        // text.slice(7, 13);
-        // text.slice(7);
-        // text.slice(-12);
-
-
-
-        console.log(date); // 2021.06.24
-        console.log(date.replace(".", "-")); // 2021-06.24
-        console.log(date.replace(/\./g, "-")); // 2021-06-24
-
-언제 uppercase나 lowercase를 사용하는가?
-서버 프로그램끼리의 규약
-- 사용자가 검색 조회를 할 때, 소문자로 검색할지 대문자로 검색하게 할지를 정함
-- 여권같이 대문자로만 printing해야할 때 사용함
-
-
-
-        var txt = "12";
-        console.log(txt.padStart(2, 0));
-날짜 사용시
