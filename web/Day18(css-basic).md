@@ -147,11 +147,34 @@ ___
 프론트 개발자로서 일을 잘하려면 결론적으로 상대방(디자이너, 퍼블리셔, 고객)에 대한 배려심이 깊은 사람이 일을 잘할 수 있는 것 같다. 결국 모든 팁들은 UX를 보다 편하게 하기 위해 생긴 팁들이 많다. 개발을 하다가 애매한 부분이 생긴다면, 같이 일하는 이해관계자들이 바라볼 때 어떤 것이 더 편할까?를 고민하는 것이 더 나은 개발자로 성장하는 길이 아닐까 싶다.
 ___
 #### *번외 - 개인 공부시 참고할 것*
-아직정리안됨..
-<a href="https://thrillfighter.tistory.com/487" target="_blank">CSS 우선순위 규칙 Cascading</a>
-https://developer.mozilla.org/ko/docs/Web/HTML/Element/link
 
-DOM 트리..? 구조 찾아볼 것
-html 주석 구조 : <!-- content -->
-css 주석 구조 : /* content */
-46html 해보면 좋음
+**CSS 우선순위 규칙**
+- 서버(저작자)의 CSS 규칙 >>> 클라이언트의 CSS규칙이 우선 순위이다.
+- !importan >>> Id >>> class >>> tag의 설정이 우선 순위를 지닌다. 
+> 참고자료 : https://thrillfighter.tistory.com/487
+
+**link(외부리소스 참조) 문법**
+- HTML 내 `link` 요소는 현재 문서와 외부 리소스의 관계를 명시, 일반적으로는 스타일 시트를 연결할 때 제일 많이 사용하지만, 아이콘이나 `svg`이미지 연결 등 여러가지로 쓰일 수 있음
+
+```html
+link 예시
+  <link href="main.css" rel="stylesheet">
+  <link rel="icon" href="favicon.ico">
+```
+
+- rel의 의미 : rel는 막하는 게 아니고, 정해진 룰이 있음
+> 참고자료 : https://developer.mozilla.org/ko/docs/Web/HTML/Element/link
+> rel 유형 : https://developer.mozilla.org/ko/docs/Web/HTML/Link_types
+
+
+**DOM tree structure**
+- 우리가 만드는 html 구조에 대한 것을 DOM이라고 하는데 DOM tree를 만듦으로서 전반적인 서비스 구조를 확인할 수 있다.
+
+<center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/DOM-model.svg/800px-DOM-model.svg.png" width="30%"><br>
+<label>돔 트리 구조 예시 - source : wikipedia</label>
+</center>
+
+**언어별 주석 표현방식**
+- html 주석 구조 : `<!-- content -->`
+- css 주석 구조 : `/* content */`
