@@ -128,28 +128,32 @@ ___
 
 ___
 #### *번외 - 개인 공부시 참고할 것*
-아직 정리 X
-자바스크립트 이름의 유래
-https://wit.nts-corp.com/2014/08/13/1925
-https://content.v.kakao.com/v/57f4d307ed94d2000107a349
-float 의 의미 : 뜨다
-float[floʊt]
-(부사 : afloat)
-동사
-1.(물 위나 공중에서) 떠[흘러]가다[떠돌다] (=drift)
-A group of swans floated by.
-한 무리의 백조들이 물 위를 떠갔다.
-2.(가라앉지 않고 물에) 뜨다
-Wood floats.
-나무는 물에 뜬다.
-명사
 
-https://www.w3schools.com/cssref/pr_class_float.asp
-코드에 빨갛게 어떻게 하지..?
-The float property specifies whether an element should float to the left, right, or not at all.
+**자바스크립트 이름의 유래**
+- 자바스크립트는 기술적으로 자바와 전혀 상관이 없다.
+- 넷스케이프에서 일했던 브랜드 아이크다 만든 언어이다. (초창기에는 모카라 명명함 => 이후 마케팅 효과를 얻기 위해 이름을 자바스크립트라 변경함)
 
-::after과 ::before
-https://developer.mozilla.org/ko/docs/Web/CSS/::after
+> 참고자료 : https://content.v.kakao.com/v/57f4d307ed94d2000107a349
 
-네이버 d2 - flex 사용방법
-https://d2.naver.com/helloworld/8540176
+**float property 의미**
+- float 의 의미 : 뜨다, 떠돌다
+
+> The float property specifies whether an element should float to the left, right, or not at all. - W3S
+
+
+**::after과 ::before 사용법**
+- 특정 태그, 클래스, id 다음의 선택자로서 활용된다.
+```css
+  /* 링크 뒤에 화살표 추가 */
+  a::after {
+    content: "→";
+  }
+```
+
+>  참고자료 : https://developer.mozilla.org/ko/docs/Web/CSS/::after
+
+
+
+**네이버 d2 - flex 사용방법**
+- flexbox로 만들 수 있는 10가지 레이아웃 : https://d2.naver.com/helloworld/8540176
+
