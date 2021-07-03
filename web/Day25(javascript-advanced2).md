@@ -136,30 +136,92 @@ getElement를 하는 function 과 setElement를 하는 function 을 분리해야
 ```
 
 
+**자바스크립트 query innerHTML와 innerText**
+- 자바스크립트를 이용하여 DOM 요소를 추가하거나, text를 넣어주는 기능은 innerHTML와 innerText로 구분된다.
+- 주의해야할 점은 qureyselect를 id값이 아닌 class나 tag로 할 경우 배열이 return되기 때문에(Node...) 뒤에 꼭 [0]를 붙여주어야 한다.
+- innerHTML은 아예 HTML 요소를 추가하는 개념이고, 텍스트만 바꾸기 위해서는 innerText를 사용한다.(with strong or span tag)
+```javascript
+document.querySelector("#div1").innerHTML = '<h1>Hello world!</h1>';
+document.querySelectorAll("h2")[0].innerText = "H2 영역이 바뀌었습니다.";
+```
+
+
+- 특정 value에 대한 조회화면을 설계할 때에도 innerHTML를 사용한다. selctbox나 radio로 사용자로부터 value를 지정받고, 선택된 value에 따른 table을 js가 그리도록 한다.
+
+```javascript
+<body> 
+  <button onclick="doSearch();">조회</button>
+
+
+  <table>
+
+    테이블 영역의 head(column index)는 미리 잡아주고
+    <thead>
+      <tr>
+        <th>이름</th>
+        <th>성별</th>
+        <th>회사</th>
+      </tr>
+    </thead>
+
+    table body부분에서 js가 그리도록 한다. => 아래 doSearch();
+    <tbody id="tb"></tbody>
+  
+
+  </table>
+  <script>
+    function doSearch() {
+      var gender = document.getElementById("sel_gender").value;
+
+
+      * 배열의 형태로 담는 이유 : 퍼포먼스적으로(성능적으로) 배열의 형태로 담는 것이 좋다. 좀 더 직관적으로 그릴 수도 있음.
+      var h = [];
+      for (var user of userList) {
+        if (gender == user.gender) {
+          h.push('<tr>');
+          h.push('<td>' + user.name + '</td>');
+          h.push('<td>' + user.gender + '</td>');
+          h.push('<td>' + user.company + '</td>');
+          h.push('</tr>');
+        }
+
+      }
+      * seperator를 join("")으로 하는 이유 : [ , , ] 내부의 seperator는 우리 눈에만 보이는 것이지 실제로는 seperator가 없는 것
+      document.getElementById("tb").innerHTML = h.join("");
+    }
+  </script>
+</body>
+```
 
 
 
-
-
-
-
-
-
-조회화면에 innerText를 사용한다
-
-table이나 selectbox도 서버에 데이터를 받아와서
-js로 다시 option을 그려준다.
-
-퍼포먼스적으로 성능적으로 배열로 담는 형태가 좋음
-[ , , ] 내부의 seperator는 우리눈에만 보이는 거라 바로 join("")하면 된다
-
-
-onclick event에 대해서도 항상 이렇게 onclick을 해줄 수 없으므로,
-id에 따라 addEventListener를 추가한다.
+**자바스크립트 onclick event와 addEventListener**
+- onclick event에 대해서도 항상 이렇게 onclick을 해줄 수 없으므로, id에 따라 addEventListener를 추가하는 것도 좋은 방법이다.
 그리고 디자이너한테도 모든 button에 id="btn"라고 적어주세요! 라고 하는게 좋음
 ```html
 <button onclick="myFunction();">click</button>
 <button id="btn">click2</button>
+
+    var listen = document.getElementById("btn").addEventListener("click", myFunction, true);
+    console.log(listen);
+
+    function myFunction() {
+      //insertAdjacentHTML()
+      //파라미터가 2개
+      //afterbegin
+      //afterend
+      //beforebegin
+      //beforeend
+
+      var addHTML = "<li>새로운 항목</li>";
+      // var addHTML = "<h1>새로운 항목</h1>";
+
+      //내가 삽입할 HTML 문자열
+      document.getElementById("myUL").insertAdjacentHTML("beforeend", addHTML);
+    }
+
+
+
 ```
 이렇게 PM이 정말 중요함. 이런 설계에 대해서 개발 디자인 고객관리를 유기적으로 
 연결해주어야 함.
