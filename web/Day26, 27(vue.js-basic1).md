@@ -140,3 +140,75 @@ radio는 하나만 가져올거니까 1개면 됨
 
 
 https://cli.vuejs.org/guide/installation.html
+
+
+views > vue 파일에서 
+{{변수명}}은 바로바로 화면에 띄울 수 있게하고,
+html문법을 사용해서 띄울 경우는 div 태그 내에 v-html:"html"로 선언한다.
+
+
+
+**main.js 의 의미**
+
+import {
+    createApp
+}
+from "vue";
+
+
+import App from "./App.vue";
+import router from "./router"; // router가 ./router/index.js를 자동으로 찾아서 연결해줌
+만약 router내에 index.js가 아닌 다른 별칭을 쓰고 싶다면
+./routr/router.js로 바꿔주면 된다.
+
+import store from "./store";
+
+createApp(App).use(store).use(router).mount("#app");
+// 처음에 프로젝트를 만들 때  router을 사용한다고 지정해서 생겼음
+store는 아직 무슨 기능인지 모르곘음..
+
+checkbox에서 연결된 것은 checked속성임. v-model의 의미가 checked를 찾는 것
+img도 한 방향으로 이뤄지는 거라 v-bind:src:"imgSrc"를 이용함
+
+근데 angular가 처음 데이터 바인딩 개념을 가져옴
+
+value를 가져오는 건 결국 v-model를 가져오는 것
+value와 v-model은 연결되어있다
+import 명도 굳이 맞춰줄 필요 없고
+name 또한 마찬가지
+
+css style scoped는 해당 컴포넌트 내에서만 그걸 풀면 전역으로 먹힘
+
+this.userList = (await axios.get(this.url)).data.data;
+첫번째 data는 데이터 불러오는거 에러랑 뭐 이상한 거슬 중
+그다음 data는 
+
+
+            if(this.selectGender ==""){
+                this.userList = userList;
+            
+            }else{
+                this.userList = this.userList.filter((u) => u.gender == this.selectGender);
+            }
+============위랑 아래랑 같은데.. ==========
+            // var newUserList = [];
+            // for(var user of userList){
+            //     if(user.gender == this.selectGender){
+            //         newUserList.push(user);
+            
+            //     }
+            // }
+            // this.userList = newUserList;
+일반적인 for문을 돌릴 때 이렇게  따로 []를 하나 더 만들어서 해주는 이유는 push를 할 때마다
+코드가 그리려고해서 한번에 그리려면 따로 빈 array를 만들어 거기다가 push 하고 최종적으로 값을 넣어주어야한다.
+
+해보는데 걍 안돌아가네.. 
+
+
+
+v-if와 v-show의 차이는 화면에 안보이는 건 똑같지만 element상으로 display:none이냐 아니면 실제 띄우지를 않았냐의 차이 보안상 if가 더 나을듯
+
+사용자의 접근자체가 불가능하게 처리하는 건 v-if지만,
+빈번이 일어나는 필요기능을 보여주고 말고를 결정하는 건 v-show로 처리하는게 좋음
+v-if는 아예 안만들기 때문에 비용이 없지만, v-show처럼 실제로는 만들지만 안보이게 하는건 비용이 든다. dom tree안에 결국 그리는 활동을 하기는 하기 때문에
+
