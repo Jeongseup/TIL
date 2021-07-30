@@ -1,0 +1,146 @@
+https://ropsten.etherscan.io/tx/0xdf304526d8b06f30f8102978f58446d1376da5459f6c108e1eaa63c381fe9ad8
+
+지난번에 이더전송해본 거
+
+https://sandbox.eth.build/
+머클루트
+
+
+
+이때 이 account들의 state를 바꾸는
+tx는 서명과 수수료로 구성되어 있고
+
+이 tx의 종류에는
+이더전송
+sc 배포
+sc 실행을 이뤄져있다.
+
+개인키 서명, 이더(gas) 수수료 => 
+tx {
+to
+}
+
+이더 채굴 지역별 현황
+https://www.ethernodes.org/countries
+
+검증자들은 자기의 고유이익
+2eth + 가스비 일텐데 
+결국 그냥 노드 = 마이너 = 검증자들은
+그냥 돈벌려고 그시스템을 유지하는 거라서
+
+그 트랜잭션이 어떤 트랜잭션인지 중요하게 생각하지 않는다.
+
+
+트랜잭션을 허용하는데 있어서
+해당 어카운트의 nonce라는 값이 이전에 다 있는 상태인지 확인하고 처리해준다.
+이게 검증한다는 의미?
+
+
+
+tx의 크기마다 가스비가 달라지는데 
+이더 한 블록 생성마다 이 가스비에 리미트가 걸려있다.
+
+
+블록사이즈가 커져서 
+하루에 저장해야하는 블록의 사이즈가 커지면
+이에 따른 고가의 장비가 필요해지고, 이런 점이 곧
+진입장벽으로 이어져서 기존 노드에서 몇몇의 노드들만이 
+이를 처리할 수 있다. 이러면서 중앙화되버린다.
+
+이래서 보안의 문제가 생길 수 있다
+
+
+이더리움은 난이도가 낮기 때문에
+비트코인보다 분기가 발생할 확률이 더 높다
+
+
+그럼 완료된 트랜잭션들은 어떻게
+다른 노드들에게도 전송이 될 수 있는 걸까?
+
+단어배열 하나를 가지고
+개인키를 하나만 만드는게 아니라 여러개를 만들 수 있다.
+
+sandbox에서 전송한번 해보고
+https://geth.ethereum.org/downloads/
+
+
+그리고 이더리움 상에서
+A라는 eoa의 논스가 0인 상태에서
+
+다음 블록이 생성될 대
+
+A ->B로 3이더
+A -> C로 3이더를 한다고 할 때
+
+노드는 검증을 하면서
+첫번째 tx에 논스를 1
+두번째 tx에 논스를 2로 두고
+순서대로 실행시키면서 검증을 한다
+
+
+== 블로그 == 
+컨트랙트 배포는
+이더 리믹스를 사용해서 코드를 작성하고
+리믹스는 이 코드를 컴파일 해주는데
+
+다음에 해당 리믹스 툴과 메타마스크를 연결해서,
+컨트랙트 배포를 통해 state를 업데이트 한다.
+
+1. remix랑 metamask랑 커넥트 해준다
+sol 파일을 하나 만든다.
+3. 세번째 탭으로 가서 injected web으로 해서
+내 지갑과 연결한다
+4. 코드를 작성하고
+pragma solidity 0.8.4;
+
+contract FirstContract {
+    
+    string name = "vitalic";
+    
+}
+
+
+5. deploy 한다
+data 부분을 보면 hex data라고 뜨는 곳이 내가 적은 코드가 compile된 상태이다
+
+https://ropsten.etherscan.io/tx/0x172cecfbae3d860d2d966b265d4bf702425e4022db53e8373d7348db641f91f4
+가면 확인 가능
+
+pragma solidity 0.8.4;
+
+contract FirstContract {
+    
+    string name = "vitalic";
+    
+    function getName() public view returns (string memory){
+        return name;
+    }
+}
+
+이번에는 셋네임을추가해서 배포
+pragma solidity 0.8.4;
+
+contract FirstContract {
+    
+    string name = "vitalic";
+    
+    function getName() public view returns (string memory){
+        return name;
+    }
+    
+    function setName(string memory _name) public {
+        name = _name;
+    }
+}
+
+
+https://remix.ethereum.org/#optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.4+commit.c7e474f2.js
+
+실제로 유니스왑같은 디앱 서비스도 이렇게 이뤄지는데
+실제 서비스가 제대로 컨트랙트 주소에 맞춰있는지는 실제로 전송하고 컨펌해야한다
+
+
+근데 왜 웹3라고 칭하는 것일까?
+
+
+이더 토네이도 믹서?
