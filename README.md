@@ -107,4 +107,12 @@ https://blog.naver.com/thswjdtmq4/222456397817
 
 https://blog.naver.com/thswjdtmq4/222459542392
 
+##### 21.08.09
+
+[TIL] opentutorials - 겁나 빠른 웹 레시피 공부
+
+[TIL]  web3의 개념과 웹의 발전과정
+
+https://blog.naver.com/thswjdtmq4/222463465864
+
 ___
