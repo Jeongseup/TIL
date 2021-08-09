@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>
+    <script>
+        var first = new mojs.Shape({
+            shape: 'circle',
+            radius: {
+                0: 40
+            },
+            stroke: 'cyan',
+            stokeWidth: {
+                20: 0
+            },
+            fill: 'none',
+            left: 0,
+            top: 0,
+            duration: 300
+        });
+
+        var seconds = [];
+        var colors = ['deeppink', 'magenta', 'blue', 'tomato'];
+        for (var i = 0; i < 4; i++) {
+            var second = new mojs.Shape({
+                parent: first.el,
+                shape: 'circle',
+                radius: {
+                    0: 'rand(10, 30)'
+                },
+                stroke: colors[i],
+                stokeWidth: {
+                    10: 0
+                },
+                fill: 'none',
+                left: '50%',
+                top: '50%',
+                x: 'rand(-50, 50)',
+                y: 'rand(-50, 50)',
+                delay: 200
+            })
+            seconds.push(second);
+        }
+
+        document.addEventListener('click', function (e) {
+            first.tune({
+                x: e.pageX,
+                y: e.pageY
+            }).replay();
+
+            for (second of seconds) {
+                second.generate().replay();
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>

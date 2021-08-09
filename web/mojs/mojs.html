@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>
+    <script>
+        var c1 = new mojs.Shape({
+
+            shape: 'circle',
+            radius: {
+                0: 'rand(10, 50)'
+            },
+            left: 0,
+            top: 0,
+            x: 0,
+            y: 0,
+            fill: 'black',
+            stroke: 'tomato',
+            strokeWidth: 'rand(1, 10)',
+            duration: 'rand(200, 2000)',
+            delay: 0,
+            // scale: 0.5,
+            // isShowStart: true
+
+        });
+
+        document.addEventListener('click', function (e) {
+            console.log(e.pageX);
+            c1.generate().tune({
+                x: e.pageX,
+                y: e.pageY,
+            }).replay();
+        });
+    </script>
+
+</body>
+
+</html>
