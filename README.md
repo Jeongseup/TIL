@@ -115,4 +115,7 @@ https://blog.naver.com/thswjdtmq4/222459542392
 
 https://blog.naver.com/thswjdtmq4/222463465864
 
+[TIL] 인터넷과 TCP/IP란 무엇일까?
+
+https://blog.naver.com/thswjdtmq4/222463544995
 ___
