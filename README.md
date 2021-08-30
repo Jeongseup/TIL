@@ -123,4 +123,17 @@ https://blog.naver.com/thswjdtmq4/222463544995
 ##### 21.08.12
 
 [Project] Artademy 프로젝트 artNFT(ERC721), createArt 컨트랙트 생성
+
+##### 21.08.12
+
+[TIL] DOM이란 무엇인가?
+
+https://blog.naver.com/thswjdtmq4/222485746085
+[TIL] URL 및 form태그 내 name 속성에 대한 이해 
+
+https://blog.naver.com/thswjdtmq4/222485793657
+
+[TIL] 웹 관련 단어 개념 정리
+
+https://blog.naver.com/thswjdtmq4/222488758503
 ___
