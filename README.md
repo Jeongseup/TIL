@@ -130,11 +130,24 @@ https://blog.naver.com/thswjdtmq4/222463544995
 
 https://blog.naver.com/thswjdtmq4/222485746085
 
+
 [TIL] URL 및 form태그 내 name 속성에 대한 이해 
 
 https://blog.naver.com/thswjdtmq4/222485793657
 
+
 [TIL] 웹 관련 단어 개념 정리
 
 https://blog.naver.com/thswjdtmq4/222488758503
+
+##### 21.08.31
+
+[TIL] 생활코딩, Node.js - 1. Node.js의 탄생 및 역활
+
+https://blog.naver.com/thswjdtmq4/222490013080
+
+[TIL] What is HTTP in URL?
+
+https://blog.naver.com/thswjdtmq4/222491925662
+
 ___
