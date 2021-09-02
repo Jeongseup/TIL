@@ -129,6 +129,7 @@ https://blog.naver.com/thswjdtmq4/222463544995
 [TIL] DOM이란 무엇인가?
 
 https://blog.naver.com/thswjdtmq4/222485746085
+
 [TIL] URL 및 form태그 내 name 속성에 대한 이해 
 
 https://blog.naver.com/thswjdtmq4/222485793657
