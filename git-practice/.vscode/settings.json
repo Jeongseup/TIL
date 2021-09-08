@@ -1,0 +1,8 @@
+{
+    "editor.fontSize": 18,
+    "markdown.links.openLocation": "beside",
+    "prettier.ignorePath": ".prettierignore",
+    "files.exclude": {
+        "**/.git": false
+    }
+}
