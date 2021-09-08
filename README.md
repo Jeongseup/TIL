@@ -150,4 +150,38 @@ https://blog.naver.com/thswjdtmq4/222490013080
 
 https://blog.naver.com/thswjdtmq4/222491925662
 
+##### 21.09.02
+
+[TIL]  CSS 스타일 가이드 및 :root의 의미
+
+https://blog.naver.com/thswjdtmq4/222493115249
+
+##### 21.09.05
+
+[TIL] 포트 번호에 따른 인터넷 서비스들의 종류와 WEB의 이해 
+
+https://blog.naver.com/thswjdtmq4/222495684171
+
+##### 21.09.07
+
+[TIL] [크립토좀비] 5 - 레슨4 클리어
+
+https://blog.naver.com/thswjdtmq4/222498266442
+
+[TIL] [크립토좀비] 6 - 레슨5 클리어(ERC-721)
+
+https://blog.naver.com/thswjdtmq4/222499154073
+
+[TIL] [크립토좀비] 7 - 레슨 6 - What is JSON-RPC in Ethereum and Web3.js libraray
+
+https://blog.naver.com/thswjdtmq4/222499221790
+
+[TIL] [크립토좀비] 8 - DApp 서비스를 위한 Web3.js 활용방법과 웹 개발 예제
+
+https://blog.naver.com/thswjdtmq4/222499348174
+
+[TIL] [크립토좀비] 9 - DApp 서비스를 위한 실제 프로젝트 참고 사항
+
+https://blog.naver.com/thswjdtmq4/222499428232
+
 ___
