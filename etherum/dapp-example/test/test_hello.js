@@ -6,7 +6,7 @@ contract("HelloWorld", function () {
         return hello.deployed().then(function (instance) {
             return instance.say().then(function (greeting) {
                 assert.equal(greeting, "Hello, World!");
-            })
+            });
         })
     })
 
