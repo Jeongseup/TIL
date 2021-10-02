@@ -6,8 +6,16 @@ app.set("view engine", "jade");
 app.set("views", "./views");
 app.use(express.static("public"));
 
-
-
+app.get("/topic/:id", (req, res) => {
+    var topics = ["javascript is ...", "node.js is ", "express is .. "];
+    var output = `
+    <a href="/topic?id=0">Javscript</a><br>
+    <a href="/topic?id=1">node</a><br>
+    <a href="/topic?id=2">express</a>
+    ${topics[req.params.id]}
+    `;
+    res.send(output);
+});
 
 app.get("/template", (req, res) => {
     res.render("temp", { time: Date(), _title: "Jade" });
