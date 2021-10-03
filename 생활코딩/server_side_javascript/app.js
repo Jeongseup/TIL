@@ -1,10 +1,28 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
 
 app.locals.pretty = true;
 app.set("view engine", "jade");
 app.set("views", "./views");
 app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.get("/form", (req, res) => {
+    res.render("form");
+});
+
+app.post("/form_receiver", (req, res) => {
+    var title = req.body.title;
+    var description = req.body.description;
+    res.send(title + "," + description);
+});
+
+app.get("/form_receiver", (req, res) => {
+    var title = req.query.title;
+    var description = req.query.description;
+    res.send(title + "," + description);
+});
 
 app.get("/topic/:id", (req, res) => {
     var topics = ["javascript is ...", "node.js is ", "express is .. "];
