@@ -6,32 +6,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
     </head>
+
     <body>
-        <button id="test">button</button>
-        <ul>
-            adad
-        </ul>
         <script>
-            const testBtn = document.getElementById("test");
-            testBtn.addEventListener("click", myBtn2);
+          
+            var tag = "#서울#양평#한경닷컴#개발의품격#잘한다";
+            var tagArr = tag.split("#");
+            console.log(tagArr);
 
-            function myBtn2(e) {
-                var btnEle = e.target;
-                console.log("click");
-            }
-            // Make a list
-            // Make a list
-            const ul = document.createElement("ul");
+            // filter empty element
+            console.log(tagArr.filter((e) => e));
 
-            function hide(evt) {
-                // e.target refers to the clicked <li> element
-                // This is different than e.currentTarget, which would refer to the parent <ul> in this context
-                evt.target.style.visibility = "hidden";
-            }
-
-            // Attach the listener to the list
-            // It will fire when each <li> is clicked
-            ul.addEventListener("click", hide, false);
+            var isRightImageExtension = imageFile.endsWith(".jpg")
+                ? true
+                : imageFile.endsWith(".png")
+                ? true
+                : false;
+            console.log(isRightImageExtension);
         </script>
     </body>
 </html>
