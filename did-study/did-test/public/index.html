@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Artademy Project</title>
+
+        <!-- web3.js -->
+        <script type="text/javascript" src="./lib/bignumber.min.js"></script>
+        <script type="text/javascript" src="./lib/web3.min.js"></script>
+    </head>
+    <body onload="init();">
+        <section>
+            <div class="input-group col-3 p-3 fs-6">
+                <button
+                    class="btn btn-secondary"
+                    type="button"
+                    id="button-addon2"
+                    onclick="test();"
+                >
+                    <h1>test</h1>
+                </button>
+            </div>
+        </section>
+        <!-- Javascript Code -->
+        <script type="text/javascript" src="./contract.js"></script>
+        <script>
+            let provider;
+            let web3;
+            let account;
+            let giverList = [];
+            let artList = [];
+
+            async function init() {
+                if (window.ethereum) {
+                    web3 = new Web3(window.ethereum);
+                    try {
+                        // connect
+                        await getContract();
+                        await connectWallet();
+                    } catch (error) {
+                        console.log(error);
+                    }
+                }
+                // Legacy dapp browsers...
+                else if (window.web3) {
+                    // Use Mist/MetaMask's provider.
+                    web3 = window.web3;
+                    console.log("Injected web3 detected.");
+                }
+            }
+
+            // init function 1
+            function getContract() {
+                myContract = new web3.eth.Contract(
+                    DidRegistryContract.abi,
+                    DidRegistryContract.address
+                );
+                console.log("Contract Connected!");
+            }
+
+            // 사용자 지갑에 연결합니다.
+            async function connectWallet() {
+                console.log("Use connectWallet function!");
+
+                // Request account access if needed
+                console.log(await window.ethereum.enable());
+
+                // get balacne in connected account
+                web3.eth.getAccounts().then(function (accounts) {
+                    account = accounts[0];
+                    console.log("Login Address is :", account);
+
+                    web3.eth.getBalance(account).then(function (balance) {
+                        // parse & convert balacne
+                        var sBalance = web3.utils
+                            .fromWei(String(balance), "ether")
+                            .slice(0, 8);
+                        console.log(sBalance);
+                    });
+                });
+            }
+
+            // 1 finney를 기부 합니다.
+            function test() {
+                console.log("sender is", account);
+
+                myContract.methods
+                    .identityOwner(account)
+                    .call()
+                    .then((result) => {
+                        console.log("result");
+                        console.log(result);
+                    });
+            }
+
+            function getBalanceOf() {
+                // console.log("Use BalanceOf function!");
+
+                if (account == undefined) {
+                    window.alert("Connect your wallet!");
+
+                    return window.scrollTo({
+                        top: 100,
+                        left: 100,
+                        behavior: "smooth",
+                    });
+                } else {
+                    tContract.methods
+                        .balanceOf(account)
+                        .call({})
+                        .then(function (result) {
+                            console.log("your token balance is", result);
+                        });
+                }
+            }
+
+            /*
+            // function name : createArt
+            // arg1 : string memory _name
+            // arg2 : string memory _createdBy
+            // arg3 : string memory _inspiredBy
+            */
+            function createArt() {
+                // console.log("Use createArt function!");
+
+                if (account == undefined) {
+                    window.alert("Connect your wallet!");
+
+                    return window.scrollTo({
+                        top: 100,
+                        left: 100,
+                        behavior: "smooth",
+                    });
+                } else {
+                    let _name = document.getElementById("input_artname").value;
+                    let _createdBy =
+                        document.getElementById("input_artcreatedby").value;
+                    let _inspiredBy = document.getElementById(
+                        "input_artinspiredby"
+                    ).value;
+
+                    // console.log(_name, _createdBy, _inspiredBy);
+
+                    nContract.methods
+                        .createArt(_name, _createdBy, _inspiredBy)
+                        .send({
+                            from: account,
+                        })
+                        .on("transactionHash", function (hash) {
+                            console.log(hash);
+                        })
+                        .on("receipt", function (receipt) {
+                            console.log(receipt);
+                        })
+                        .on("error", function (error, receipt) {
+                            console.log(error, receipt);
+                        });
+                }
+            }
+
+            function getArtsByOwner() {
+                if (account == undefined) {
+                    window.alert("Connect your wallet!");
+
+                    return window.scrollTo({
+                        top: 100,
+                        left: 100,
+                        behavior: "smooth",
+                    });
+                } else {
+                    nContract.methods
+                        .getArtsByOwner(account)
+                        .call({})
+                        .then(function (result) {
+                            console.log(result);
+                            window.alert(result);
+                        });
+                }
+            }
+        </script>
+    </body>
+</html>
