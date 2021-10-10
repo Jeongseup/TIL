@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdn.rawgit.com/jgthms/minireset.css/master/minireset.css">
+		<link rel="stylesheet" href="css/debug.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900">
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+		<style>
+
+:root {
+	/* colors */
+	--white      : #ffffff;
+	--orange     : #ff691f;
+	--yellow     : #fab81e;
+	--lightgreen : #7fdbb6;
+	--green      : #19cf86;
+	--lightblue  : #91d2fa;
+	--blue       : #1b95e0;
+	--grey       : #abb8c2;
+	--red        : #e81c4f;
+	--pink       : #f58ea8;
+	--purple     : #981ceb;
+	--black      : #000000;
+
+	/* font (default) */
+	font: 1rem/1.175 "BlinkMacSystemFont", -apple-system, "Roboto", sans-serif;
+}
+
+#app {
+	/* grid */
+	display: grid;
+	/* grid:4x3 */
+	grid-template-areas:
+		". . . ."
+		". . . ."
+		". . . .";
+	/* spacing */
+	padding: 96px; grid-gap: 32px;
+	/* fullscreen */
+	width: 100vw; height: 100vh;
+}
+
+img {
+	/* size */
+	width: 3.5rem; height: 3.5rem;
+	/* center offset */
+	vertical-align: calc(-0.12109375em);
+}
+
+.grid-item {
+	/* grid */
+	display: grid;
+	/* grid:1x2 */
+	grid-template-rows: 65% 35%;
+	/* background */
+	background: whitesmoke;
+	/* material-ui.com/#/components/paper */
+	border-radius: 4px; box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 60px;
+	/* transform */
+	transition: transform 500ms;
+}
+
+.grid-item:hover {
+	/* transition */
+	transition: transform 500ms;
+	/* transform */
+	transform: scale(1.1);
+}
+
+.grid-cell--top, .grid-cell--bottom {
+	/* flex */
+	display: flex;
+	/* flex:center */
+	justify-content: center; align-items: center;
+}
+
+.grid-cell--top    { border-radius: 4px 4px 0 0; }
+.grid-cell--bottom { font-weight: 900; font-size: 1.75rem; }
+
+.bounce { animation: bounce 1s; }
+
+@keyframes bounce {
+	  0% { transform: rotate(  0deg) scale(1.0); }
+	 33% { transform: rotate( 12deg) scale(1.2); }
+	 67% { transform: rotate(-12deg) scale(0.8); }
+	100% { transform: rotate(  0deg) scale(1.0); }
+}
+
+		</style>
+	</head>
+	<body>
+
+		<div id="app" :style="gradient(active)">
+			<swatch
+				v-for="swatch in swatches"
+				@click.native="activate(swatch)"
+				:active="active" :swatch="swatch" :effect="gradient"
+			></swatch>
+		</div>
+
+		<script>
+
+"use strict"
+
+// emojify returns the corresponding emoji image
+function emojify(name) {
+	var out = `<img src="emojis/` + name + `.png">`
+	return out
+}
+
+Vue.component("swatch", {
+	props: ["active", "swatch", "effect"],
+	template: `
+		<div class="grid-item">
+			<div class="grid-cell--top" :style="effect(swatch)" >
+				<span
+					v-html="swatch.emoji"
+					:class="{ bounce: swatch == active }"
+				></span>
+			</div>
+			<div class="grid-cell--bottom" :style="corrected_color()">
+				{{ swatch.color.toUpperCase() }}
+			</div>
+		</div>
+	`, 
+    methods: {
+        corrected_color: function () {
+            return {
+                color: this.swatch.color == '#ffffff' ? '#000000' : this.swatch.color
+            }
+        }
+    }
+})
+
+var app = new Vue({
+	el: "#app",
+	data: {
+		active: "",
+		swatches: [
+		    { emoji: emojify("lion"    ), color: "#ff691f" },
+		    { emoji: emojify("tiger"   ), color: "#fab81e" },
+		    { emoji: emojify("fish"    ), color: "#7fdbb6" },
+		    { emoji: emojify("frog"    ), color: "#19cf86" },
+		    { emoji: emojify("dolphin" ), color: "#91d2fa" },
+		    { emoji: emojify("whale"   ), color: "#1b95e0" },
+		    { emoji: emojify("elephant"), color: "#abb8c2" },
+		    { emoji: emojify("octopus" ), color: "#e81c4f" },
+		    { emoji: emojify("pig"     ), color: "#f58ea8" },
+		    { emoji: emojify("unicorn" ), color: "#981ceb" },
+		    { emoji: emojify("rabbit"  ), color: "#ffffff" },
+		    { emoji: emojify("wolf"    ), color: "#000000" },
+		],
+	},
+	methods: {
+		// activate actives a swatch (emoji/color)
+		activate: function (swatch) {
+			this.active = swatch
+		},
+		// gradient returns a precomposed gradient
+		gradient: function (swatch) {
+			return {
+				background: "linear-gradient(100deg, whitesmoke -100%, " + swatch.color + ")",
+			}
+		}
+	}
+})
+
+		</script>
+
+	</body>
+</html>
