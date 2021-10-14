@@ -22,7 +22,6 @@
         <div id="app">
             <v-app>
                 <v-main>
-                    <v-container class="display">Hello world</v-container>
                     <playground></playground>
                 </v-main>
             </v-app>
@@ -32,55 +31,58 @@
         <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
         <script>
             Vue.component("playground", {
-                template: `
-                <v-container>
-        <v-row>
-            <v-col cols="12">
-                <v-row class="mb-12">
+                template:
+                    /*html*/
+                    `
+                        <v-container>
+                <v-row>
                     <v-col cols="12">
-                        <h1 class="mb-5">Playground</h1>
-                        <v-divider />
+                    
+                        <v-row class="mb-12">
+                            <v-col cols="12">
+                              
+        <div>
+            <h3>Buttons</h3>
+            <v-card class="mt-5 mb-8">
+            <v-card-text>
+                <v-row>
+                <v-col cols="12">
+                    <v-btn>Normal</v-btn>
+                </v-col>
+                </v-row>
+                <v-row>
+                <v-col cols="12">
+                    <v-btn tile outlined color="success">
+                    <v-icon left>mdi-pencil</v-icon> Edit
+                    </v-btn>
+                </v-col>
+                </v-row>
+                <v-row>
+                <v-col cols="12">
+                    <v-btn text icon color="pink">
+                    <v-icon>mdi-heart</v-icon>
+                    </v-btn>
+                    <v-btn text icon color="deep-orange">
+                    <v-icon>mdi-thumb-up</v-icon>
+                    </v-btn>
+                </v-col>
+                </v-row>
+                <v-row>
+                <v-col>
+                    <v-btn class="mx-2" fab dark color="indigo">
+                    <v-icon dark>mdi-plus</v-icon>
+                    </v-btn>
+                </v-col>
+                </v-row>
+            </v-card-text>
+            </v-card>
+        </div>
+       
+                            </v-col>
+                        </v-row>
                     </v-col>
                 </v-row>
-                <v-row class="mb-12">
-                    <v-col cols="12">
-                        <Typography />
-                        <v-divider />
-                    </v-col>
-                </v-row>
-                <v-row class="mb-12">
-                    <v-col cols="12">
-                        <Spacing />
-                        <v-divider />
-                    </v-col>
-                </v-row>
-                <v-row class="mb-12">
-                    <v-col cols="12">
-                        <Buttons />
-                        <v-divider />
-                    </v-col>
-                </v-row>
-                <v-row class="mb-12">
-                    <v-col cols="12">
-                        <Menus />
-                        <v-divider />
-                    </v-col>
-                </v-row>
-                <v-row class="mb-12">
-                    <v-col cols="12">
-                        <Grid />
-                        <v-divider />
-                    </v-col>
-                </v-row>
-                <v-row class="mb-12">
-                    <v-col cols="12">
-                        <Card />
-                        <v-divider />
-                    </v-col>
-                </v-row>
-            </v-col>
-        </v-row>
-    </v-container>`,
+            </v-container>`,
             });
 
             new Vue({
