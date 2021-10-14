@@ -34,50 +34,98 @@
                 template:
                     /*html*/
                     `
-                        <v-container>
+            <v-container>
                 <v-row>
                     <v-col cols="12">
-                    
                         <v-row class="mb-12">
                             <v-col cols="12">
-                              
-        <div>
-            <h3>Buttons</h3>
-            <v-card class="mt-5 mb-8">
-            <v-card-text>
-                <v-row>
-                <v-col cols="12">
-                    <v-btn>Normal</v-btn>
-                </v-col>
-                </v-row>
-                <v-row>
-                <v-col cols="12">
-                    <v-btn tile outlined color="success">
-                    <v-icon left>mdi-pencil</v-icon> Edit
-                    </v-btn>
-                </v-col>
-                </v-row>
-                <v-row>
-                <v-col cols="12">
-                    <v-btn text icon color="pink">
-                    <v-icon>mdi-heart</v-icon>
-                    </v-btn>
-                    <v-btn text icon color="deep-orange">
-                    <v-icon>mdi-thumb-up</v-icon>
-                    </v-btn>
-                </v-col>
-                </v-row>
-                <v-row>
-                <v-col>
-                    <v-btn class="mx-2" fab dark color="indigo">
-                    <v-icon dark>mdi-plus</v-icon>
-                    </v-btn>
-                </v-col>
-                </v-row>
-            </v-card-text>
-            </v-card>
-        </div>
-       
+                                <template>                
+                                    <div>
+                                        <h3>Buttons</h3>
+                                        <v-card class="mt-5 mb-8">
+                                            <v-card-text>
+                                                <v-row>
+                                                <v-col cols="12">
+                                                    <v-btn>Normal</v-btn>
+                                                </v-col>
+                                                </v-row>
+                                                <v-row>
+                                                <v-col cols="12">
+                                                    <v-btn tile outlined color="success">
+                                                    <v-icon left>mdi-pencil</v-icon> Edit
+                                                    </v-btn>
+                                                </v-col>
+                                                </v-row>
+                                                <v-row>
+                                                <v-col cols="12">
+                                                    <v-btn text icon color="pink">
+                                                    <v-icon>mdi-heart</v-icon>
+                                                    </v-btn>
+                                                    <v-btn text icon color="deep-orange">
+                                                    <v-icon>mdi-thumb-up</v-icon>
+                                                    </v-btn>
+                                                </v-col>
+                                                </v-row>
+                                                <v-row>
+                                                <v-col>
+                                                    <v-btn class="mx-2" fab dark color="indigo">
+                                                    <v-icon dark>mdi-plus</v-icon>
+                                                    </v-btn>
+                                                </v-col>
+                                                </v-row>
+                                            </v-card-text>
+                                        </v-card>
+                                    </div>
+                                </template>
+                                <template>
+                                    <div>
+                                        <h3>Menus</h3>
+                                        <v-card class="mt-5 mb-8">
+                                        <v-card-text>
+                                            <v-toolbar
+                                            color="deep-purple accent-4"
+                                            dense
+                                            dark
+                                            >
+                                            <v-app-bar-nav-icon></v-app-bar-nav-icon>
+
+                                            <v-toolbar-title>App Title</v-toolbar-title>
+
+                                            <v-spacer></v-spacer>
+
+                                            <v-btn icon>
+                                                <v-icon>mdi-heart</v-icon>
+                                            </v-btn>
+
+                                            <v-btn icon>
+                                                <v-icon>mdi-magnify</v-icon>
+                                            </v-btn>
+
+                                            <v-menu
+                                                left
+                                                bottom
+                                            >
+                                                <template v-slot:activator="{ on }">
+                                                <v-btn icon v-on="on">
+                                                    <v-icon>mdi-dots-vertical</v-icon>
+                                                </v-btn>
+                                                </template>
+
+                                                <v-list>
+                                                <v-list-item
+                                                    v-for="n in 5"
+                                                    :key="n"
+                                                    @click="() => {}"
+                                                >
+                                                    <v-list-item-title>Option {{ n }}</v-list-item-title>
+                                                </v-list-item>
+                                                </v-list>
+                                            </v-menu>
+                                            </v-toolbar>
+                                        </v-card-text>
+                                        </v-card>
+                                    </div>
+                                    </template>
                             </v-col>
                         </v-row>
                     </v-col>
