@@ -1,7 +1,15 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const paperSchema = new Schema({}, { timestamps: true, strict: false });
+const paperSchema = new Schema(
+    // {
+    //     paperId: {
+    //         type: Number,
+    //     },
+    // },
+    {},
+    { timestamps: true, strict: false }
+);
 const PaperCollection = mongoose.model("Paper", paperSchema);
 
 // record = colleciton

@@ -2,13 +2,7 @@ require("dotenv").config({ path: ".env.local" });
 const express = require("express");
 const mongoose = require("mongoose");
 
-const app = express();
-
 const { PORT, MONGO_URI } = process.env;
-
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.use("/", require("./routes"));
 
 // CONNECT TO MONGODB SERVER
 mongoose
@@ -18,6 +12,13 @@ mongoose
     })
     .then(() => console.log("Successfully connected to mongodb"))
     .catch((e) => console.error(e));
+
+const app = express();
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use("/", require("./routes"));
+app.use("/api/paper", require("./routes/paper"));
 
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
 
