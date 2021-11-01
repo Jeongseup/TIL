@@ -30,6 +30,22 @@ const store = (req, res, next) => {
     const paperObject = req.body.paper;
 
     const testCollectionData = new Paper(paperObject);
+
+    // 미들웨어
+    if (req.file) {
+        paper.avatar = req.file.path;
+    }
+
+    // 파일이 여러개인 경우
+    if (req.files) {
+        let path = "";
+        req.files.forEach(function (files, index, arr) {
+            path = path + files.path + ",";
+        });
+        path = path.substring(0, path.lastIndexOf(","));
+        paper.avatar = path;
+    }
+
     testCollectionData
         .save()
         .then((result) => {
@@ -72,4 +88,38 @@ const destroy = (req, res, next) => {
         });
 };
 
-module.exports = { index, show, store, update, destory };
+const login = (req, res, next) => {
+    var username = req.body.username;
+    var password = req.body.password;
+
+    Paper.findOne({ $or: [{ email: username }, { phone: username }] }).then(
+        (user) => {
+            if (user) {
+                // bcrypt.compare(password, user.password, function (err, result) {
+                //     if(err) {
+                //         res.json {
+                //             error : err
+                //         }
+                //     }
+                //     if(result) {
+                //         let token = jwt.sign({name: user.name}, 'Secret Value', {expiresIn: '1h'})
+                //         res.json({
+                //             message: "Login Successful!",
+                //             token
+                //         })
+                //     } else {
+                //         res.json({
+                //             message: "Password does not matched!"
+                //         })
+                //     }
+                // })
+            } else {
+                res.json({
+                    message: "No user found!",
+                });
+            }
+        }
+    );
+};
+
+module.exports = { index, show, store, update, destory, login };

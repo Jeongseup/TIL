@@ -21,5 +21,5 @@ var upload = multer({
             callback(null, false);
         }
     },
-    limits: {},
+    limits: { fileSize: 1024 * 1024 * 2 },
 });
