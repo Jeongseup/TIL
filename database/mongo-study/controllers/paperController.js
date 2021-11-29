@@ -1,3 +1,4 @@
+"use strict"
 const Paper = require("../models/paper");
 
 // 모든 설문지 조건을 가져온다.

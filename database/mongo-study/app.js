@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/", require("./routes"));
 app.use("/api/paper", require("./routes/paper"));
-app.use("/uploads", express.static("uploads"));
+app.use("/uploads", express.static('uploads'))
 
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
 
