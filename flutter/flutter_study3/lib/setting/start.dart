@@ -1,6 +1,7 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_study3/page/vm.dart';
 import 'package:flutter_study3/util/logger/logger.dart';
 import 'package:flutter_study3/util/tmdb/ready.dart';
 import 'package:get/get.dart';
@@ -40,4 +41,5 @@ readyForRunAppStart() {}
 readyForAppStart(BuildContext context) async {
   await readyForTMDB();
   await readyForLogger();
+  Get.put(HomeViewModel());
 }
