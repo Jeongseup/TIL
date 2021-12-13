@@ -38,21 +38,19 @@ class User {
 
     get age() {
         // private age
-        return this._age;
+        return this.age;
     }
 
     set age(value) {
-        // console.log(this.age);
-        // console.log(value);
+        console.log(this.age);
+        console.log(value);
 
         // if (value < 0) {
         //     throw Error("Age can not be negative");
         // }
 
         // this.age = value를 하면 call stack이 닫히게 된다.
-        this._age = value < 0 ? 0 : value;
-        // console.log(this.age);
-        // this._age = value;
+        this.age = value;
     }
 }
 
@@ -61,15 +59,15 @@ const user1 = new User("Jeongseup", "Son", -1);
 
 //  3. Fields (public, private)
 //  Too soon!
-//  mozilla... ?
+//  mozilla... ?rmfl
 class Experiment {
     pubicField = 2;
     #privateFeild = 0;
 }
 
 const expreiment = new Experiment();
-// console.log(expreiment.pubicField);
-// console.log(expreiment.privateFeild);
+console.log(expreiment.pubicField);
+console.log(expreiment.privateFeild);
 
 class Article {
     static publisher = "Jeongseup";
@@ -86,7 +84,6 @@ const article1 = new Article(1);
 const article2 = new Article(2);
 
 console.log("publisher of article1 is", article1.publisher);
-
 console.log("publisher of Article is", Article.publisher);
 Article.printPublisher();
 
@@ -107,7 +104,12 @@ class Shape {
     }
 }
 
+// 직사각형, 삼각형, 원,, ... abn => 도형
+// width, height
+
 class Rectangle extends Shape {}
+// class Triangle extends Shape {}
+
 class Triangle extends Shape {
     draw() {
         super.draw();
@@ -120,11 +122,11 @@ class Triangle extends Shape {
 }
 
 const rectangle = new Rectangle(20, 20, "blue");
-rectangle.draw();
+// rectangle.draw();
 console.log(rectangle.getArea());
 
 const trinangle = new Triangle(20, 20, "red");
-trinangle.draw();
+// trinangle.draw();
 
 console.log(trinangle.getArea());
 
@@ -134,37 +136,39 @@ console.log(trinangle instanceof Triangle);
 console.log(trinangle instanceof Shape);
 console.log(trinangle instanceof Object);
 
-// interface Object {
-//     /** The initial value of Object.prototype.constructor is the standard built-in Object constructor. */
-//     constructor: Function;
+//  Object > Shape > Rectangle, Triangle > rectangle, triangle
 
-//     /** Returns a string representation of an object. */
-//     toString(): string;
+interface Object {
+    /** The initial value of Object.prototype.constructor is the standard built-in Object constructor. */
+    constructor: Function;
 
-//     /** Returns a date converted to a string using the current locale. */
-//     toLocaleString(): string;
+    /** Returns a string representation of an object. */
+    toString(): string;
 
-//     /** Returns the primitive value of the specified object. */
-//     valueOf(): Object;
+    /** Returns a date converted to a string using the current locale. */
+    toLocaleString(): string;
 
-//     /**
-//      * Determines whether an object has a property with the specified name.
-//      * @param v A property name.
-//      */
-//     hasOwnProperty(v: PropertyKey): boolean;
+    /** Returns the primitive value of the specified object. */
+    valueOf(): Object;
 
-//     /**
-//      * Determines whether an object exists in another object's prototype chain.
-//      * @param v Another object whose prototype chain is to be checked.
-//      */
-//     isPrototypeOf(v: Object): boolean;
+    /**
+     * Determines whether an object has a property with the specified name.
+     * @param v A property name.
+     */
+    hasOwnProperty(v: PropertyKey): boolean;
 
-//     /**
-//      * Determines whether a specified property is enumerable.
-//      * @param v A property name.
-//      */
-//     propertyIsEnumerable(v: PropertyKey): boolean;
-// }
+    /**
+     * Determines whether an object exists in another object's prototype chain.
+     * @param v Another object whose prototype chain is to be checked.
+     */
+    isPrototypeOf(v: Object): boolean;
+
+    /**
+     * Determines whether a specified property is enumerable.
+     * @param v A property name.
+     */
+    propertyIsEnumerable(v: PropertyKey): boolean;
+}
 
 console.log(trinangle.toString());
 
