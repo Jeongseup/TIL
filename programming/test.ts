@@ -4,9 +4,8 @@ let value1 :string = "hello TS"
 let value2 :string[] = ['hello TS']
 let value3 :number[] = [123]
 
-// console.log(value1, value2, value3)
-
-// console.log(typeof value1)
+console.log(value1, value2, value3)
+console.log(typeof value1)
 
 // Key는 name, value는 string 형식을 가진 object만을 담는 변수
 let value4 :{name : string} = { name : 'Jeongseup Son'}
