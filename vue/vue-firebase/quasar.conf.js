@@ -146,9 +146,9 @@ module.exports = configure(function (ctx) {
       },
 
       manifest: {
-        name: 'Vue Firebase Blog',
-        short_name: 'Vue Firebase Blog',
-        description: 'blog',
+        name: 'seuplog',
+        short_name: 'seuplog',
+        description: 'vue firebase blog',
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
@@ -213,7 +213,7 @@ module.exports = configure(function (ctx) {
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        appId: 'vue-firebase'
+        appId: 'seuplog'
       },
 
       // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
