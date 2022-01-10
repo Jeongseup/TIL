@@ -2,9 +2,7 @@
   <div>
     {{ text.toUpperCase() }}
   </div>
-  <div>
-    deep : <TestDeepComponent />
-  </div>
+  <div>deep : <TestDeepComponent /></div>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'
@@ -19,7 +17,7 @@ export default defineComponent({
       default: () => 'test'
     }
   },
-  setup () {
+  setup() {
     //
   }
 })

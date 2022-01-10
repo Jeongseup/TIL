@@ -1,0 +1,26 @@
+[debug] [2022-01-10T08:41:36.317Z] ----------------------------------------------------------------------
+[debug] [2022-01-10T08:41:36.323Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\seup\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init functions
+[debug] [2022-01-10T08:41:36.324Z] CLI Version:   10.0.1
+[debug] [2022-01-10T08:41:36.324Z] Platform:      win32
+[debug] [2022-01-10T08:41:36.325Z] Node Version:  v16.0.0
+[debug] [2022-01-10T08:41:36.326Z] Time:          Mon Jan 10 2022 17:41:36 GMT+0900 (대한민국 표준시)
+[debug] [2022-01-10T08:41:36.326Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-01-10T08:41:36.433Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-01-10T08:41:36.433Z] > authorizing via signed-in user (seup87@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Projects\TIL\vue\vue-firebase
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+  * You are initializing within an existing Firebase project directory
+
