@@ -8,7 +8,8 @@
     "scripts": {
         "lint": "eslint --ext .js,.ts,.vue ./",
         "test": "echo \"No test specified\" && exit 0",
-        "emul": "firebase emulators:start"
+        "emul": "firebase emulators:start",
+        "dev" : "quasar dev"
     },
     "dependencies": {
         "@quasar/extras": "^1.0.0",
