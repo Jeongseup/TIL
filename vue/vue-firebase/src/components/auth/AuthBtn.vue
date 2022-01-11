@@ -1,31 +1,12 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-// Import the functions you need from the SDKs you need
-import { initializeApp } from 'firebase/app'
-import firebaseConfig from '../../../firebaseConfig.js'
-import {
-    getAuth,
-    connectAuthEmulator,
-    GoogleAuthProvider,
-    signInWithPopup,
-    onAuthStateChanged,
-    User,
-    signOut
-} from 'firebase/auth'
+import {} from 'vue'
+import { auth } from 'boot/firebase'
+import { firebaseUser, useAuth } from 'src/composable/useAuth'
 
-initializeApp(firebaseConfig)
-
-const auth = getAuth()
-connectAuthEmulator(auth, 'http://localhost:9099')
-auth.useDeviceLanguage()
+import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth'
 
 const provider = new GoogleAuthProvider()
-const firebaseUser = ref<User | null>(null)
-
-onAuthStateChanged(auth, (user) => {
-    console.log(user)
-    firebaseUser.value = user
-})
+useAuth()
 </script>
 <template>
     <q-btn v-if="firebaseUser" round color="info">
@@ -40,9 +21,7 @@ onAuthStateChanged(auth, (user) => {
                             </q-item-section>
                             <q-item-section>
                                 <q-item-label>이름</q-item-label>
-                                <q-item-label caption>{{
-                                    firebaseUser.displayName
-                                }}</q-item-label>
+                                <q-item-label caption>{{ firebaseUser.displayName }}</q-item-label>
                             </q-item-section>
                         </q-item>
                         <q-item clickable v-ripple>
@@ -51,19 +30,12 @@ onAuthStateChanged(auth, (user) => {
                             </q-item-section>
                             <q-item-section>
                                 <q-item-label>이메일</q-item-label>
-                                <q-item-label caption>{{
-                                    firebaseUser.email
-                                }}</q-item-label>
+                                <q-item-label caption>{{ firebaseUser.email }}</q-item-label>
                             </q-item-section>
                         </q-item>
                     </q-list>
                     <q-card-actions align="right">
-                        <q-btn
-                            color="primary"
-                            icon="mdi-logout"
-                            label="로그아웃"
-                            @click="signOut(auth)"
-                        />
+                        <q-btn color="primary" icon="mdi-logout" label="로그아웃" @click="signOut(auth)" />
                     </q-card-actions>
                 </q-card>
             </q-menu>
