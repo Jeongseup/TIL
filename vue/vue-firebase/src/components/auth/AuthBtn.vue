@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app'
 import firebaseConfig from '../../../firebaseConfig.js'
@@ -6,20 +7,69 @@ import {
     getAuth,
     connectAuthEmulator,
     GoogleAuthProvider,
-    signInWithPopup
+    signInWithPopup,
+    onAuthStateChanged,
+    User,
+    signOut
 } from 'firebase/auth'
 
 initializeApp(firebaseConfig)
 
 const auth = getAuth()
 connectAuthEmulator(auth, 'http://localhost:9099')
-
 auth.useDeviceLanguage()
 
 const provider = new GoogleAuthProvider()
+const firebaseUser = ref<User | null>(null)
+
+onAuthStateChanged(auth, (user) => {
+    console.log(user)
+    firebaseUser.value = user
+})
 </script>
 <template>
-    <q-btn round color="info" @click="signInWithPopup(auth, provider)">
+    <q-btn v-if="firebaseUser" round color="info">
+        <q-avatar size="24px">
+            <img :src="firebaseUser.photoURL || ''" alt="" />
+            <q-menu>
+                <q-card>
+                    <q-list bordered>
+                        <q-item clickable v-ripple>
+                            <q-item-section avatar>
+                                <q-icon color="primary" name="mdi-account" />
+                            </q-item-section>
+                            <q-item-section>
+                                <q-item-label>이름</q-item-label>
+                                <q-item-label caption>{{
+                                    firebaseUser.displayName
+                                }}</q-item-label>
+                            </q-item-section>
+                        </q-item>
+                        <q-item clickable v-ripple>
+                            <q-item-section avatar>
+                                <q-icon color="primary" name="mdi-email" />
+                            </q-item-section>
+                            <q-item-section>
+                                <q-item-label>이메일</q-item-label>
+                                <q-item-label caption>{{
+                                    firebaseUser.email
+                                }}</q-item-label>
+                            </q-item-section>
+                        </q-item>
+                    </q-list>
+                    <q-card-actions align="right">
+                        <q-btn
+                            color="primary"
+                            icon="mdi-logout"
+                            label="로그아웃"
+                            @click="signOut(auth)"
+                        />
+                    </q-card-actions>
+                </q-card>
+            </q-menu>
+        </q-avatar>
+    </q-btn>
+    <q-btn v-else round color="info" @click="signInWithPopup(auth, provider)">
         <q-avatar size="24" icon="mdi-login" />
     </q-btn>
 </template>
