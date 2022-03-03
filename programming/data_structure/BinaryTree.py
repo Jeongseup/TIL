@@ -1,3 +1,6 @@
+from collections import deque
+
+
 class Node:
     def __init__(self, data):
         self.left = None
@@ -55,11 +58,15 @@ class BinaryTree:
         result.append(node.data)
         self._inorder_rec(node.right, result)
 
-    def depth_frist_search(self):
-        res_iter = []
-        res_iter = self.dfs_iter()
+    def depth_first_search(self):
+        # res_iter = []
+        # res_iter = self.dfs_iter()
 
-        print(f'dfs iter : {res_iter}')
+        # print(f'dfs iter : {res_iter}')
+
+        res_rec = []
+        self.dfs_rec(self.__root, res_rec)
+        print(f'dfs_rec : {res_rec}')
 
     def dfs_iter(self):
         if not self.__root:
@@ -81,16 +88,34 @@ class BinaryTree:
 
         return result
 
-# bst = BinaryTree()
-#
-# input_datas = []
-# for item in input().split(' '):
-# 	if item == "N":
-# 		input_datas.append(None)
-# 	else:
-# 		input_datas.append(int(item))
-#
-# bst.create_bst(input_datas)
-# 14 42 35 33 31 19 27 10 N N N 26 N N
-# print(bst.inorder_traverse())
+    def dfs_rec(self, node, result):
 
+        if not node:
+            return
+
+        result.append(node.data)
+        if node.left:
+            self.dfs_rec(node.left, result)
+        if node.right:
+            self.dfs_rec(node.right, result)
+
+    def breath_first_search(self):
+        queue = deque()
+        res = []
+
+        queue.append(self.__root)
+        while len(queue) != 0:
+            qsize = len(queue)
+
+            for _ in range(qsize):
+                node = queue.popleft()
+
+                # 왼쪽 노드가 있다면
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+
+                res.append(node.data)
+
+        print(f'breath first search : {res}')
