@@ -69,10 +69,10 @@ class LinkedList:
 		curr = None
 
 	def remove_node(self, node: Node):
-		if node == None:
+		if node is None:
 			return
 
-		if node.next == None:
+		if node.next is None:
 			node = None
 			return
 
@@ -81,6 +81,7 @@ class LinkedList:
 		node.next = next_node.next
 
 		next_node = None
+
 
 linked_list = LinkedList()
 # node1 = Node(11)
