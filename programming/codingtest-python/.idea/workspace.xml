@@ -1,7 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a8dd9660-7c14-479f-85ff-1b2992ffb513" name="Default Changelist" comment="" />
+    <list default="true" id="a8dd9660-7c14-479f-85ff-1b2992ffb513" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_07.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_08.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_13.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_14.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_18.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_19.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_20.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_21.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_24.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_25.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_27.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_29.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_30.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_31.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_33.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_35.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_36.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_38.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_42.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_43.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_46.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_47.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_52.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_62.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_63.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_70.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_73.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_74.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_79.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_80.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_81.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_82.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_84.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_88.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_90.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/codeUp/codeUp_92.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data_structure/DynamicProgramming.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data_structure/InsertionSort.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data_structure/KnapsackProblem.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data_structure/MergeSort.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data_structure/QuickSort.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data_structure/Timsort.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../data_structure/bubbleSort.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data_structure/test.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,7 +71,9 @@
     </option>
   </component>
   <component name="ProjectId" id="25Y2EWOi5oNIWpPhPSSFkplQbgJ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -33,10 +81,15 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../coding_test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Python.untilOne">
-    <configuration name="bigNumbr" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projects\TIL\programming\codingtest-python\codeUp" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.codeUp_92">
+    <configuration name="codeUp_82" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="codingtest-python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -44,11 +97,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/codeUp" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bigNumbr.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/codeUp/codeUp_82.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -57,7 +110,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="greedy01" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="codeUp_84" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="codingtest-python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -65,11 +118,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/codeUp" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/greedy01.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/codeUp/codeUp_84.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -78,7 +131,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="numberCard" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="codeUp_88" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="codingtest-python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -86,11 +139,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/codeUp" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/numberCard.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/codeUp/codeUp_88.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -99,7 +152,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="untilOne" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="codeUp_90" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="codingtest-python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -107,11 +160,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/codeUp" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/untilOne.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/codeUp/codeUp_90.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="codeUp_92" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="codingtest-python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/codeUp" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/codeUp/codeUp_92.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -122,10 +196,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.untilOne" />
-        <item itemvalue="Python.numberCard" />
-        <item itemvalue="Python.bigNumbr" />
-        <item itemvalue="Python.greedy01" />
+        <item itemvalue="Python.codeUp_92" />
+        <item itemvalue="Python.codeUp_90" />
+        <item itemvalue="Python.codeUp_88" />
+        <item itemvalue="Python.codeUp_84" />
+        <item itemvalue="Python.codeUp_82" />
       </list>
     </recent_temporary>
   </component>
@@ -159,29 +234,29 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="110" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1645768836196" />
-    <state width="741" height="309" key="GridCell.Tab.0.bottom" timestamp="1645695428238">
+    <state width="1509" height="355" key="GridCell.Tab.0.bottom" timestamp="1646386813021">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="741" height="309" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1645695428238" />
-    <state width="741" height="309" key="GridCell.Tab.0.center" timestamp="1645695428238">
+    <state width="1509" height="355" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1646386813021" />
+    <state width="1509" height="355" key="GridCell.Tab.0.center" timestamp="1646386813021">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="741" height="309" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1645695428238" />
-    <state width="741" height="309" key="GridCell.Tab.0.left" timestamp="1645695428238">
+    <state width="1509" height="355" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1646386813021" />
+    <state width="1509" height="355" key="GridCell.Tab.0.left" timestamp="1646386813021">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="741" height="309" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1645695428238" />
-    <state width="741" height="309" key="GridCell.Tab.0.right" timestamp="1645695428238">
+    <state width="1509" height="355" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1646386813021" />
+    <state width="1509" height="355" key="GridCell.Tab.0.right" timestamp="1646386813021">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="741" height="309" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1645695428238" />
+    <state width="1509" height="355" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1646386813021" />
     <state x="522" y="80" key="Vcs.Push.Dialog.v2" timestamp="1645695302622">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="522" y="80" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1645695302622" />
-    <state x="347" y="0" width="840" height="822" key="search.everywhere.popup" timestamp="1645692896955">
+    <state x="347" y="0" width="840" height="822" key="search.everywhere.popup" timestamp="1646375554881">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="347" y="0" width="840" height="822" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1645692896955" />
+    <state x="347" y="0" width="840" height="822" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1646375554881" />
   </component>
 </project>
